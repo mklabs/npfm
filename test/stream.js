@@ -1,22 +1,10 @@
 const fs = require('fs');
 
+// According PFM method: https://sourceforge.net/p/packfilemanager/code/HEAD/tree/trunk/Common/PackFileCodec.cs#l98
 const slashed = (str) => str.replace('/', '\\');
 const stream = fs.createWriteStream('test.pack');
 
-// var crypto = require('crypto');
-// var fs = require('fs');
-// var wstream = fs.createWriteStream('myBinaryFile');
-// // creates random Buffer of 100 bytes
-// var buffer = crypto.randomBytes(100);
-// wstream.write(buffer);
-// // create another Buffer of 100 bytes and write
-// wstream.write(crypto.randomBytes(100));
-// wstream.end();
-
 // Create PackFile at the given path with a default header of type Mod and type PFH3.
-
-const headerLength = 0x1C;
-
 stream.write(Buffer.from('PFH5'));
 
 const precedenceByte = Buffer.alloc(4);
@@ -80,33 +68,5 @@ for (const file of files) {
     stream.write(Buffer.from(file.content));
   }
 }
-
-// Int64 fileTime = DateTime.Now.ToFileTimeUtc ();
-// writer.Write (fileTime);
-
-
-// toWrite.Sort (new PackedFileNameComparer ());
-
-// foreach (PackedFile file in toWrite) {
-//     writer.Write ((int)file.Size);
-//     if (packFile.Header.HasAdditionalInfo) {
-//         writer.Write(packFile.Header.AdditionalInfo);
-//     }
-//     // pack pathes use backslash, we replaced when reading
-//     string packPath = file.FullPath.Replace (separatorString, "\\");
-//     if (packFile.Header.PackIdentifier == "PFH5")
-//     {
-//         writer.Write((byte)0);
-//     }
-//     writer.Write (packPath.ToCharArray ());
-//     writer.Write ('\0');
-// }
-
-// foreach (PackedFile file in toWrite) {
-//     if (file.Size > 0) {
-//         byte[] bytes = file.Data;
-//         writer.Write (bytes);
-//     }
-// }
 
 stream.end();

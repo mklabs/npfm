@@ -5,7 +5,7 @@
   "main": "DBFile.js",
   "scripts": {
     "pretest": "rm -rf output/",
-    "test": "node test/test.js && node test/stream.js"
+    "test": "node test/vinyl.js && node test/stream.js"
   },
   "keywords": [],
   "author": "",
