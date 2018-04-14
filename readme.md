@@ -2,6 +2,8 @@
 
 node experiments around [PFM](https://sourceforge.net/projects/packfilemanager/) modding tool.
 
+[![Build Status](https://travis-ci.org/mklabs/twmods.svg?branch=npfm)](https://travis-ci.org/mklabs/twmods)
+
 ## Installation
 
     # either use npm or yarn
