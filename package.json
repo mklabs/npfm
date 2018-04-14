@@ -1,0 +1,24 @@
+{
+  "name": "packfilemanager-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "DBFile.js",
+  "scripts": {
+    "pretest": "rm -rf output/",
+    "test": "node js/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eyes": "^0.1.8",
+    "fs-mkdirp-stream": "^1.0.0",
+    "glob-stream": "^6.1.0",
+    "graceful-fs": "^4.1.11",
+    "map-stream": "0.0.7",
+    "pumpify": "^1.4.0",
+    "resolve-options": "^1.1.0",
+    "to-through": "^2.0.0",
+    "vinyl-fs": "^3.0.2"
+  }
+}
