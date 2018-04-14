@@ -1,11 +1,11 @@
 {
-  "name": "packfilemanager-code",
+  "name": "npmf",
   "version": "1.0.0",
-  "description": "",
-  "main": "DBFile.js",
+  "description": "Stream to write CA modding pack",
   "scripts": {
     "pretest": "rm -rf output/",
-    "test": "node test/vinyl.js && node test/stream.js"
+    "test": "mocha test/npfm.js",
+    "pretest": "node test/stream.js"
   },
   "keywords": [],
   "author": "",

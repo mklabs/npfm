@@ -10,6 +10,6 @@ var log = function(file, cb) {
   cb(null, file);
 };
 
-vpack.src('./test-script/**/*')
+vpack.src('./script/**/*')
   .pipe(map(log))
   .pipe(vpack.dest('./output/modpack'));
