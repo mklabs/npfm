@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "Stream to write CA modding pack",
   "scripts": {
-    "pretest": "rm -rf output/",
-    "test": "npm run mocha",
     "pretest": "node test/stream.js data/retail/npfm.pack",
+    "test": "npm run mocha",
     "mocha": "mocha test/npfm.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@kgryte/travis-yml": "^1.0.9",
     "eyes": "^0.1.8",
     "fs-mkdirp-stream": "^1.0.0",
     "glob-stream": "^6.1.0",
