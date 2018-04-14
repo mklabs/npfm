@@ -4,8 +4,9 @@
   "description": "Stream to write CA modding pack",
   "scripts": {
     "pretest": "rm -rf output/",
-    "test": "mocha test/npfm.js",
-    "pretest": "node test/stream.js"
+    "test": "npm run mocha",
+    "pretest": "node test/stream.js data/retail/npfm.pack",
+    "mocha": "mocha test/npfm.js"
   },
   "keywords": [],
   "author": "",

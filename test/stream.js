@@ -1,8 +1,11 @@
 const fs = require('fs');
+const argv = process.argv.slice(2);
+const [ filename ] = argv;
 
 // According PFM method: https://sourceforge.net/p/packfilemanager/code/HEAD/tree/trunk/Common/PackFileCodec.cs#l98
 const slashed = (str) => str.replace(/\//g, '\\');
-const stream = fs.createWriteStream('test.pack');
+console.log('Generate Packfile to %s', filename);
+const stream = fs.createWriteStream(filename || './test.pack');
 
 // Create PackFile at the given path with a default header of type Mod and type PFH3.
 stream.write(Buffer.from('PFH5', 'ascii'));

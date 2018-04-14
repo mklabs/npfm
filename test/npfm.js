@@ -11,8 +11,8 @@ describe('npfm', () => {
   });
 
   it('Generates identical .pack files', () => {
-    const testPack = fs.readFileSync(path.join(__dirname, '../test.pack'));
-    const pfmPack = fs.readFileSync(path.join(__dirname, '../t.pack'));
-    assert.equal(Buffer.compare(testPack, pfmPack), 0, 'Packs are the same!');
+    const npfmPack = fs.readFileSync(path.join(__dirname, '../data/retail/npfm.pack'));
+    const pfmPack = fs.readFileSync(path.join(__dirname, '../data/retail/pfm.pack'));
+    assert.equal(Buffer.compare(npfmPack, pfmPack), 0, 'Packs are the same!');
   });
 });
