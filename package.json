@@ -1,6 +1,6 @@
 {
   "name": "npfm",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Modding tools, CLI and vinyl adapter to generate CA modding pack for Total War Warhammer II",
   "bin": "bin/npfm",
   "main": "./lib/index.js",
