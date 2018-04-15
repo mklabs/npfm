@@ -16,8 +16,15 @@ Warhammer II.
 ## Usage
 
 ```js
-const pack = require('npfm');
-pack.src('./working_data/**/*').pipe(pack.dest('data/retail.mod.pack'));
+const path = require('path');
+const packer = require('npfm/lib/packer');
+const output = 'foo.pack';
+const pattern = '**/*';
+
+(async () => {
+  const pack = await packer.create({ output, pattern, cwd: path.resolve('working_data') });
+  debug('Pack created at %s', pack.output);
+})();
 ```
 
 Note: Only works with raw files such as script and assets (images, text file
