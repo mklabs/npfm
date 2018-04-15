@@ -1,6 +1,6 @@
 {
   "name": "npfm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream to write CA modding pack",
   "bin": "bin/npfm",
   "main": "./lib/index.js",
