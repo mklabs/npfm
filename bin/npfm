@@ -42,7 +42,7 @@ const commands = {
       -s, --src     Source files (default: working_data/**/*)
 
     Example:
-        npfm pack --src "src/script/**/*" data/retail/mod.pack
+      npfm pack --src "src/script/**/*" data/retail/mod.pack
     `);
 
     const src = argv.src || argv.s || 'working_data/**/*';

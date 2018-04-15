@@ -1,6 +1,7 @@
 # npfm
 
-node experiments around [PFM](https://sourceforge.net/projects/packfilemanager/) modding tool.
+Modding tools, CLI and vinyl adapter to generate CA modding pack for Total War
+Warhammer II.
 
 [![Build Status](https://travis-ci.org/mklabs/twmods.svg?branch=npfm)](https://travis-ci.org/mklabs/twmods)
 
@@ -25,4 +26,32 @@ converted from XML to binary format first (or use bob / pfm's output).
 
 ### CLI
 
-TODO
+```
+npfm v1.0.2 - https://mklabs.github.io/npfm
+
+Usage: npfm [command] [options]
+
+Example:
+      npfm [watch|serve|init] [options]
+
+Commands
+  create      - run a given create template
+  init        - run the init template
+  serve       - start a development server with watch mode enabled
+  pack        - generate a pack file
+
+Options
+  -h, --help
+```
+
+Create a mod pack from a given directory tree structure with `npfm pack`.
+
+```
+Usage: npfm pack [destination] [options]
+
+Options:
+  -s, --src     Source files (default: working_data/**/*)
+
+Example:
+  npfm pack --src "src/script/**/*" data/retail/mod.pack
+```

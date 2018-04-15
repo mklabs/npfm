@@ -1,7 +1,7 @@
 {
   "name": "npfm",
   "version": "1.0.2",
-  "description": "Stream to write CA modding pack",
+  "description": "Modding tools, CLI and vinyl adapter to generate CA modding pack for Total War Warhammer II",
   "bin": "bin/npfm",
   "main": "./lib/index.js",
   "scripts": {
@@ -38,5 +38,5 @@
     "to-through": "^2.0.0",
     "vinyl-fs": "^3.0.2"
   },
-  "homepage": "https://mklabs.github.io/npfm"
+  "homepage": "https://www.npmjs.com/package/npfm"
 }
