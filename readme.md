@@ -55,3 +55,11 @@ Options:
 Example:
   npfm pack --src "src/script/**/*" data/retail/mod.pack
 ```
+
+### Credits
+
+Huge thanks to [PackFileManager authors and
+maintainers](https://sourceforge.net/projects/packfilemanager/). I just ported
+the main save function from PackFileCode class into a nodejs library. All the
+heavy lifting of putting exact bytes at the correct position have been done
+by PFM developpers.
