@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const argv = require('minimist')(process.argv.slice(2));
 const npfm = require('..');
+const map  = require('map-stream');
 
 if (argv.debug || argv.d) process.env.DEBUG = 'npfm*';
 else process.env.DEBUG = process.env.DEBUG || 'npfm*';
@@ -51,6 +52,7 @@ const commands = {
 
     return new Promise((resolve, reject) => {
       return npfm.src(src)
+      .pipe(map((file, done) => debug(file.path) || done(null, file)))
       .pipe(npfm.dest(destination))
       .on('finish', () => console.log('  Created pack %s file', destination))
       .on('finish', resolve);
@@ -93,8 +95,6 @@ for (const script of Object.keys(scripts)) {
 
     Options
       -h, --help
-
-
   `);
 
   const now = Date.now();
