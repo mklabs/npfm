@@ -5,6 +5,13 @@ sudo: false
 node_js:
   - 'node'
 
+install:
+  - npm ci
+
 branches:
   only:
   - npfm
+
+cache:
+  directories:
+  - "$HOME/.npm"

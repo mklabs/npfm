@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+const argv = require('minimist')(process.argv.slice(2));
+
+if (argv.debug || argv.d) process.env.DEBUG = 'npfm*';
+else process.env.DEBUG = process.env.DEBUG || 'npfm*';
+
+const path = require('path');
+const {
+  version,
+  homepage,
+  scripts
+} = require(path.join(__dirname, '../package.json'));
+
+const debug     = require('debug')('npfm');
+const { spawn } = require('npm-run');
+
+const [ cmd ] = argv._;
+const commands = {
+  start() {
+    spawn('npm', `start -- ${process.argv.slice(3).join(' ')}`.split(' '), {
+      stdio: 'inherit'
+    });
+  },
+
+  create() {
+    const args  = `${process.argv.slice(3).join(' ')}`.trim().split(' ');
+    if (!args[0]) {
+      return new Error('You must supply a create template');
+    }
+
+    spawn('npx', args, {
+      stdio: 'inherit'
+    });
+  },
+
+  pack() {
+    debug('pack', argv);
+  }
+};
+
+
+const availableScripts = [];
+for (const script of Object.keys(scripts)) {
+  if (script === 'pretest') continue;
+  if (script === 'test') continue;
+  if (script === 'mocha') continue;
+
+  availableScripts.push(script);
+  commands[script] = () => {
+    debug('Running script %s', script);
+    spawn('npm', `run ${script} -- ${process.argv.slice(3).join(' ')}`.split(' '), {
+      stdio: 'inherit'
+    });
+  }
+}
+
+
+(async () => {
+  const action = commands[cmd];
+  if (!action) return console.log(`
+    npfm v${version} - ${homepage}
+
+    Usage: npfm [command] [options]
+
+    Example:
+          npfm [${availableScripts.map((script) => `${script}`).join('|')}] [options]
+
+    Commands
+      create      - run a given create template
+      init        - run the init template
+      serve       - start a development server with watch mode enabled
+      pack        - generate a pack file
+
+    Options
+      -h, --help
+
+
+  `);
+
+  const now = Date.now();
+  const err = await action();
+  if (err) return console.log(`  ${err.message}`);
+  console.log(`  npfm ${cmd} completed in %dms`, Date.now() - now);
+})();
