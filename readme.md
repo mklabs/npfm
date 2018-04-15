@@ -3,7 +3,7 @@
 Modding tools, CLI and vinyl adapter to generate CA modding pack for Total War
 Warhammer II.
 
-[![Build Status](https://travis-ci.org/mklabs/npfm.svg?branch=npfm)](https://travis-ci.org/mklabs/npfm)
+[![Build Status](https://travis-ci.org/mklabs/npfm.svg?branch=master)](https://travis-ci.org/mklabs/npfm)
 
 ## Installation
 
