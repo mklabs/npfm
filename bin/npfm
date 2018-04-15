@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const argv = require('minimist')(process.argv.slice(2));
+const npfm = require('..');
 
 if (argv.debug || argv.d) process.env.DEBUG = 'npfm*';
 else process.env.DEBUG = process.env.DEBUG || 'npfm*';
@@ -33,8 +34,27 @@ const commands = {
     });
   },
 
-  pack() {
-    debug('pack', argv);
+  async pack() {
+    if (argv.help || argv.h) return console.log(`
+    Usage: npfm pack [destination] [options]
+
+    Options:
+      -s, --src     Source files (default: working_data/**/*)
+
+    Example:
+        npfm pack --src "src/script/**/*" data/retail/mod.pack
+    `);
+
+    const src = argv.src || argv.s || 'working_data/**/*';
+    const destination = argv._[1];
+    if (!destination) return new Error('You must supply an output destination for your pack');
+
+    return new Promise((resolve, reject) => {
+      return npfm.src(src)
+      .pipe(npfm.dest(destination))
+      .on('finish', () => console.log('  Created pack %s file', destination))
+      .on('finish', resolve);
+    });
   }
 };
 
