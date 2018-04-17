@@ -94,6 +94,7 @@ for (const script of Object.keys(scripts)) {
       init        - run the init template
       serve       - start a development server with watch mode enabled
       pack        - generate a pack file
+      pfm         - forwards the arguments and options to pfm executable
 
     Options
       -h, --help
