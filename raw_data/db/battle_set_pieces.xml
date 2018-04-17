@@ -3045,4 +3045,84 @@
     <outro_movie_lose>Front_end_selection_movies/alberic_front_end</outro_movie_lose>
     <outro_movie_win>Front_end_selection_movies/alberic_front_end</outro_movie_win>
   </battle_set_pieces>
+  <battle_set_pieces record_uuid="{b870f0e1-88df-418b-9692-e4da37893c33}" record_timestamp="1523936096551" record_key="ae">
+    <battle_name>ae</battle_name>
+    <battle_type>Tutorial</battle_type>
+    <battle_duration>60</battle_duration>
+    <frontend_icon_offset_x>0</frontend_icon_offset_x>
+    <frontend_icon_offset_y>0</frontend_icon_offset_y>
+    <is_player_attacker>true</is_player_attacker>
+    <use_large_armies>true</use_large_armies>
+    <localised_description>&lt;Placeholder&gt;</localised_description>
+    <localised_name>&lt;Placeholder&gt;</localised_name>
+    <battle_environment>weather/battle/wh_vmp_01.environment</battle_environment>
+    <battle_script/>
+    <battlefield_folder/>
+    <bmd_layer_type>attacker_direction_east</bmd_layer_type>
+    <catchment_area/>
+    <game_expansion_key>beastmen_owners</game_expansion_key>
+    <intro_movie>Front_end_selection_movies/alberic_front_end</intro_movie>
+    <outro_movie_lose>Front_end_selection_movies/alberic_front_end</outro_movie_lose>
+    <outro_movie_win>Front_end_selection_movies/alberic_front_end</outro_movie_win>
+  </battle_set_pieces>
+  <battle_set_pieces record_uuid="{b59ac9be-251c-482e-b5c6-7397cc384c86}" record_timestamp="1523936560198" record_key="eaz">
+    <battle_name>eaz</battle_name>
+    <battle_type>Tutorial</battle_type>
+    <battle_duration>60</battle_duration>
+    <frontend_icon_offset_x>0</frontend_icon_offset_x>
+    <frontend_icon_offset_y>0</frontend_icon_offset_y>
+    <is_player_attacker>true</is_player_attacker>
+    <use_large_armies>true</use_large_armies>
+    <localised_description>&lt;Placeholder&gt;</localised_description>
+    <localised_name>&lt;Placeholder&gt;</localised_name>
+    <battle_environment>weather/battle/wh_vmp_01.environment</battle_environment>
+    <battle_script/>
+    <battlefield_folder/>
+    <bmd_layer_type>attacker_direction_east</bmd_layer_type>
+    <catchment_area/>
+    <game_expansion_key>beastmen_owners</game_expansion_key>
+    <intro_movie>Front_end_selection_movies/alberic_front_end</intro_movie>
+    <outro_movie_lose>Front_end_selection_movies/alberic_front_end</outro_movie_lose>
+    <outro_movie_win>Front_end_selection_movies/alberic_front_end</outro_movie_win>
+  </battle_set_pieces>
+  <battle_set_pieces record_uuid="{f28e6c9e-883b-4d4e-8c6f-c4d891f03d88}" record_timestamp="1523936688086" record_key="aez">
+    <battle_name>aez</battle_name>
+    <battle_type>Tutorial</battle_type>
+    <battle_duration>60</battle_duration>
+    <frontend_icon_offset_x>0</frontend_icon_offset_x>
+    <frontend_icon_offset_y>0</frontend_icon_offset_y>
+    <is_player_attacker>true</is_player_attacker>
+    <use_large_armies>true</use_large_armies>
+    <localised_description>&lt;Placeholder&gt;</localised_description>
+    <localised_name>&lt;Placeholder&gt;</localised_name>
+    <battle_environment>weather/battle/wh_vmp_01.environment</battle_environment>
+    <battle_script/>
+    <battlefield_folder/>
+    <bmd_layer_type>attacker_direction_east</bmd_layer_type>
+    <catchment_area/>
+    <game_expansion_key>beastmen_owners</game_expansion_key>
+    <intro_movie>Front_end_selection_movies/alberic_front_end</intro_movie>
+    <outro_movie_lose>Front_end_selection_movies/alberic_front_end</outro_movie_lose>
+    <outro_movie_win>Front_end_selection_movies/alberic_front_end</outro_movie_win>
+  </battle_set_pieces>
+  <battle_set_pieces record_uuid="{5d116b2a-cf2d-481e-b211-f43d45c1d901}" record_timestamp="1523936724383" record_key="ppopo">
+    <battle_name>ppopo</battle_name>
+    <battle_type>Tutorial</battle_type>
+    <battle_duration>60</battle_duration>
+    <frontend_icon_offset_x>0</frontend_icon_offset_x>
+    <frontend_icon_offset_y>0</frontend_icon_offset_y>
+    <is_player_attacker>true</is_player_attacker>
+    <use_large_armies>true</use_large_armies>
+    <localised_description>&lt;Placeholder&gt;</localised_description>
+    <localised_name>&lt;Placeholder&gt;</localised_name>
+    <battle_environment>weather/battle/wh_vmp_01.environment</battle_environment>
+    <battle_script/>
+    <battlefield_folder/>
+    <bmd_layer_type>attacker_direction_east</bmd_layer_type>
+    <catchment_area/>
+    <game_expansion_key>beastmen_owners</game_expansion_key>
+    <intro_movie>Front_end_selection_movies/alberic_front_end</intro_movie>
+    <outro_movie_lose>Front_end_selection_movies/alberic_front_end</outro_movie_lose>
+    <outro_movie_win>Front_end_selection_movies/alberic_front_end</outro_movie_win>
+  </battle_set_pieces>
 </dataroot>
