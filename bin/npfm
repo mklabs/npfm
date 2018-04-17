@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 const argv = require('minimist')(process.argv.slice(2));
-const packer = require('../lib/packer');
-const map  = require('map-stream');
 
 if (argv.debug || argv.d) process.env.DEBUG = 'npfm*';
 else process.env.DEBUG = process.env.DEBUG || 'npfm*';
+
+const packer = require('../lib/packer');
+const commands = require('../lib/commands');
+const chalk = require('chalk');
 
 const path = require('path');
 const {
@@ -17,7 +19,8 @@ const debug     = require('debug')('npfm');
 const { spawn } = require('npm-run');
 
 const [ cmd ] = argv._;
-const commands = {
+
+const actions = {
   start() {
     spawn('npm', `start -- ${process.argv.slice(3).join(' ')}`.split(' '), {
       stdio: 'inherit'
@@ -51,22 +54,24 @@ const commands = {
     const output = argv._[1];
     if (!output) return new Error('You must supply an output destination for your pack');
 
-
     debug('Creating pack at %s', output);
     const pack = await packer.create({ output, globs, cwd: path.resolve('working_data') });
     debug('Pack created at %s', output);
   }
 };
 
+for (const command of Object.keys(commands)) {
+  actions[command] = commands[command];
+}
 
 const availableScripts = [];
 for (const script of Object.keys(scripts)) {
-  if (script === 'pretest') continue;
   if (script === 'test') continue;
   if (script === 'mocha') continue;
+  if (script === 'pretest') continue;
 
   availableScripts.push(script);
-  commands[script] = () => {
+  actions[script] = () => {
     debug('Running script %s', script);
     spawn('npm', `run ${script} -- ${process.argv.slice(3).join(' ')}`.split(' '), {
       stdio: 'inherit'
@@ -74,9 +79,8 @@ for (const script of Object.keys(scripts)) {
   }
 }
 
-
 (async () => {
-  const action = commands[cmd];
+  const action = actions[cmd];
   if (!action) return console.log(`
     npfm v${version} - ${homepage}
 
@@ -96,7 +100,7 @@ for (const script of Object.keys(scripts)) {
   `);
 
   const now = Date.now();
-  const err = await action();
-  if (err) return console.log(`  ${err.message}`);
+  const err = await action(argv);
+  if (err && err.message) return console.log(`  ${chalk.red(err.message)}`);
   console.log(`  npfm ${cmd} completed in %dms`, Date.now() - now);
 })();

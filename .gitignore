@@ -2,3 +2,6 @@ test-script/
 output/
 node_modules/
 working_data/
+raw_data/
+update_commands_example.txt
+update_commands_example.txt
