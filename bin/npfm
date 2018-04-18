@@ -74,6 +74,11 @@ for (const script of Object.keys(scripts)) {
 
   const now = Date.now();
   const err = await action(argv);
-  if (err && err.message) return console.log(`  ${chalk.red(err.message)}`);
+  if (err && err.message) {
+    console.log(`  ${chalk.red(err.message)}`);
+    process.exit(err.code || 1);
+  }
+
   console.log(`  npfm ${cmd} completed in %dms`, Date.now() - now);
+  process.exit(0);
 })();
