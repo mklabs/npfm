@@ -30,6 +30,18 @@ You don't need to manually download PackFileManager, and won't interfere with
 the one you might already have installed. On install, this package will
 automatically download the latest PFM version, and put it in the `.pfm` folder.
 
+**workflow**
+
+```
+With bob: Assembly Kit (Dave) => Export changes to binaries => bob => retail/data/mod.pack
+With npfm: Assembly Kit (Dave) => Export changes to binaries => npfm => npfm_generated_mod.pack
+```
+
+npfm can effectively be use to feed PFM with the `working_data/` directory
+structure and generate a pack out of it.
+
+[![npfm pack](https://img.youtube.com/vi/Ri2dZ0XNpDo/0.jpg)](https://www.youtube.com/watch?v=Ri2dZ0XNpDo)
+
 ## Documentation
 
 - [General User Guide (wip)](./docs)
