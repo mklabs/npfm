@@ -9,7 +9,7 @@ const rimraf = promisify(require('rimraf'));
 // TODO: handle executable on osx, unix ?
 const version = require('../package.json').config.pfmversion;
 const url = (version) => `https://sourceforge.net/projects/packfilemanager/files/Release/Pack%20File%20Manager%20${version}.zip/download`;
-const temp = path.join(__dirname, '../.cache');
+const temp = path.join(__dirname, '../.pfm');
 
 const run = async () => {
   const target = path.join(temp, 'pfm.zip');
@@ -21,13 +21,9 @@ const run = async () => {
   await nugget(downloadUrl, { target });
 
   console.log(' ... Unzipping %s to bin/pfm', target);
-  await decompress(target, path.join(__dirname, '../bin'), {
-    filter: (file) => path.basename(file.path) === 'pfm.exe'
-  });
-
+  await decompress(target, path.join(temp, 'pfm'));
   console.log('... Cleaning cache directory ...');
-  await rimraf(temp);
-
+  // await rimraf(temp);
   console.log('... Done ...');
 };
 

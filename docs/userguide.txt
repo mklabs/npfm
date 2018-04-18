@@ -1,0 +1,216 @@
+Contents
+
+1 Disclaimer
+2 Introduction
+3 User Created Maps Process
+3.1 About editing files
+3.2 Creating a map in TEd
+3.3 Additional Images
+3.4 Map Information
+3.4.1 Historical Battles
+3.4.2 Multiplayer Battles
+3.5 Adding your map to the Steam Workshop
+3.6 Updating your map on the Steam Workshop
+3.7 Subscribing to other maps
+4 Assembly Kit Process
+4.1 modding.zip
+4.2 TWeak
+4.2.1 DaVE
+4.2.2 Unit Editor
+4.2.3 BOB
+4.3 mod.pack
+4.4 Mod Manager
+
+Disclaimer
+
+Before uploading your mod to the Steam Workshop, please ensure your it does not contain any offensive content. We will not host mods that contain such content.
+
+Please also ensure that you are not using any existing copyrighted work or materials or infringing on any existing trademarks. We will also remove mods that are not compliant with these rules.
+
+Introduction
+Good news everyone! Total War: SHOGUN 2 is now supported through the Steam Workshop! What does this mean exactly? This means that you can use our recently released map editing tool TEd to create your very own battlefield maps and upload them to the Steam Workshop for the whole world to see and play.
+
+In addition, you will be able to use the Assembly Kit to create your own mods, too.
+
+It’s possible to create your dream land or naval battle or even your own historical battle and share it with the world. We’re supplying detailed documentation and providing examples for you to understand and modify to get you started.
+
+This document will outline the process from start to finish, point you in the right direction for map creation, Battle XML creation and Battle Script creation as well as any problems that you may encounter along the way, as well as the whole process for creating a mod with the Assembly Kit.
+
+User Created Maps Process
+About editing files
+Many of the files that make up a scripted battle are text-editable, such as XML and lua script files. We recommend you obtain a feature-rich text editor such as notepad++ to more easily edit these kinds of files.
+
+Creating a map in TEd
+If you’re interested in using our map making tool TEd to create your map, we have an entire separate document called TEd Documentation.pdf (that should be located in the same folder from which you opened this) that outlines the entire map making process and every component of TEd in detail. This is where you should start your map making journey.
+
+Additional Images
+After you save your Battlefield in TEd it will be saved in the following directory;
+C:\Users\<USER_NAME>\AppData\Roaming\The Creative Assembly\Shogun2\maps\<MAP_NAME>
+
+Navigate to the folder of your created map.
+In this folder there will be a file called icon.tga this is the image that Shogun2 uses to display your map in-game. You can use the default one provided.
+Or you can supply your own. The image size has to be 512x256 pixels.
+The second image you can supply is called steam_workshop.jpg
+This is the thumbnail image that is displayed when browsing the Steam Workshop.
+It is not essential to supply one (an image can be supplied after the map has been uploaded)
+It can be whatever you like but a screenshot of your battlefield would be useful.
+It must be included in the same folder as icon.tga and the other additional map files
+Map Information
+The file map_info.xml (located in the map folder) is an essential file that determines what type of map you have created and also contains other vital information. When you save your battlefield in TEd this file is created automatically so all you have to do it open it up and edit a few things.
+A detailed explanation of XML files can be found on the following websites;
+http://www.w3schools.com/xml/
+http://en.wikipedia.org/wiki/XML
+Historical Battles
+If you want your map to be a Historical Battle, your map_info.xml file has to contain the following tags;
+<map_info>
+<display_name>My First Shogun 2 Map</display_name>
+<description> My First Shogun 2 Map</description>
+<author> The Creative Assembly</author>
+<type>land</type>
+<historical>1</historical>
+<has_key_buildings>false</has_key_buildings>
+<year>1570</year>
+</map_info>
+<display_name> = The name of you map and how it will be shown to others both in game and on the Steam Workshop
+<description> = A description of your map that will appear in Steam Workshop.
+<author> = Who the map was made by (e.g. yourself)
+<type> = The type of map. Either land, naval or siege.
+<historical> = When set to 1, the map will ONLY appear in the map list in the
+Historical Battles section. When set to 0 the map will be present in both the Custom Battles and Multiplayer Battles sections, and can be played against other players.
+
+In addition, if you want your map to be a Historical Battle, two additional files must be created and placed in this folder. These files are
+battle.xml
+script.lua
+The contents of what has to be contained in these files are described in great detail in separate documents called;
+Battle XML.docx
+Battle Script.docx
+Both of which are located in the same folder as this document.
+NOTE: If your Historical Battle does not contain both a valid battle.xml and script.lua, the game may crash when attempting to load it
+
+Multiplayer Battles
+b.	Multiplayer Battles
+
+If you want your map to be a Multiplayer Battle, your map_info.xml file has to contain the following tags:
+<map_info>
+<display_name>My First Shogun 2 Map</display_name>
+<description> My First Shogun 2 Map</description>
+<author> The Creative Assembly</author>
+<type>land</type>
+<team_size_1>1</team_size_1>
+<team_size_2>2</team_size_2>
+<historical>0</historical>
+<defender_funds_ratio>1.0</defender_funds_ratio>
+<has_key_buildings>false</has_key_buildings>
+</map_info>
+<display_name> = The name of you map and how it will be shown to others both in game and on the Steam Workshop
+<description> = A description of your map that will appear in Steam Workshop.
+<author> = Who the map was made by (e.g. yourself)
+<type> = The type of map. Either land, naval or siege.
+<team_size_1> and <team_size_2> = The different sizes of each team. The possible combinations are 1v1, 2v2, 3v3 and 4v4.
+<historical> = When set to 1, the map will ONLY appear in the map list in the Historical Battles section. When set to 0 the map will be present in both the Custom Battles and Multiplayer Battles sections, and can be played against other players.
+<defender_funds_ratio> = The ratio applied to the defending sides budget on siege maps. Usually on a scale of 0-1.
+<has_key_buildings> = true or false whether your map contains key buildings or not.
+ 
+
+Adding your map to the Steam Workshop
+After all the essential files have been added to the map folder and the map_info.xml file, it’s time to upload our map to the Steam Workshop.
+
+NOTE: It is very important that the correct files are present and contain the correct information in your map folder. If they are not it could cause other people’s game to crash or cause strange behaviour. Please go back to section 3 and ensure that everything is present and working before adding to the Steam Workshop.
+
+Re-open TEd if you have closed it.
+Go to “File” -> “Load Battlefield” and select your map from the dialogue.
+Go to “File” -> “Add Battlefield to Steam Workshop”
+NOTE: This will cause TEd to become unresponsive for a short period while the map is uploading – be patient!
+
+If your upload has been successful you will see the following message:
+Your map has been added to the Steam Workshop as hidden content. Now you can make it publicly available from your Steam Workshop page.
+It’s possible you may get a few errors when trying to upload. Try restarting Steam & TEd and try again.
+Next go to the following URL; http://steamcommunity.com/workshop/
+Click “Login” located at the top of the page and sign in with your Steam Username and Password.
+Next, click the link that says “Your Workshop Items”
+This page contains all the items you have uploaded as part of the Steam Workshop, including the TEd map you just added. Select it now.
+You will notice that the map’s current visibility is set to “Hidden”. This means that no one will be able to view your map until you change the visibility to “Public” or “Friends-only”.
+This enables you to edit the title & description, add images & videos or delete your map if you wish before anyone gets to see it.
+When you are happy with the changes made to your map, change the visibility to “Public” or “Friends-only”. This means that when you click the following link: Shogun 2 - View Workshop
+You will be taken to the SHOGUN 2 workshop where you can browse other user’s creations, including your own
+Updating your map on the Steam Workshop
+If you feel like making some changes to your map or if you forgot to include something the first time round, don’t worry!
+Simply launch TEd and load your map, make any changes you desire and then select
+“File” -> “Update Battlefield on Steam Workshop”
+
+This will update your battlefield and anyone Subscribed to your map will download the new version automatically when they re-launch SHOGUN 2.
+NOTE: If you have added a map to the Steam Workshop and you are subscribed to your own map, this version will be downloaded every time you launch the game. If you have made changes locally to your map always remember to update on the Steam Workshop or you may lose your data!
+
+Subscribing to other maps
+Subscribing to other peoples maps is easy. Simply browse the Total War: SHOGUN 2 workshop until you find a map you would like to play and then hit the Subscribe button on the map’s information page.
+NOTE: Pay attention to if the map you are subscribing to is a Historical Battle or a Multiplayer Map as this affects where the map will be visible in-game.
+
+Next time you launch Total War: SHOGUN 2, all the custom maps you have subscribed to will be downloaded automatically in the background when you start the game.
+If you subscribed to a Historical Battle, the map will appear in a separate tab under “Historical Battles” from the main menu.
+If you subscribed to a Multiplayer Battle, the map will appear in both the “Custom Battles” and “Avatar Conquest” sections from the main menu.
+If you’re hosting a multiplayer battle against a friend and select a custom map to play, the map will be transferred and downloaded automatically to anyone that does not have that map.
+If the author of a map updates their map while you are playing Total War: SHOGUN 2, you will need to re-start the game in order you receive the updated version of the map.
+If you no longer wish to subscribe to an authors’ map – simply navigate to it in the Steam Workshop interface and hit the Unsubscribe button;
+Assembly Kit Process
+NOTE: Changing any data that is read by the game could cause the game to crash. It is your responsibility to make sure that any data you change causes the game to work correctly!
+
+modding.zip
+The first step in order to create your very own mod for Total War: SHOGUN 2 is to launch Steam, navigate to the TOOLS section in your games library and launch Total War: SHOGUN 2 – Assembly Kit.
+This will open Explorer and take you to your Steam install directory which should contain a new folder called modding. By default this folder is located at: C:\Program Files (x86)\Steam\steamapps\common\total war shogun 2\modding
+
+There is a file here called modding.zip. Extract this archive to somewhere such as C:\Modding for example, if the folder you extract it to has a very long path some of the tools may not work!
+Inside this folder you will find 4 sub-folders;
+
+binaries
+max_exporter
+raw_data
+working_data
+Inside the binaries folder there is a file called game_path.txt. Ensure that this file is pointed towards your Total War: SHOGUN 2 Steam install directory. By default this is located at:
+C:\Program Files (x86)\Steam\steamapps\common\total war shogun 2
+
+TWeak
+TWeak itself is a framework from where most of our tools are launched. Included in the Assembly Kit are DaVE (DAtabase Visual Editor) and the Unit Editor. With effective use of these tools you can change almost any aspect of SHOGUN 2 that you wish.
+
+DaVE
+First, launch TWeak.Release.exe from the modding/binaries folder.
+From the Tools menu, select DAVE – DAtabase Visual Editor
+At the prompt, select “Yes” to connect to the database.
+From the View menu, select Table Launcher. This list of tables contains all the data that the game uses including all land and naval units, their stats, costs, models, campaign data, all in-game text and much, much more. All this information can be changed and turned into a mod.
+Open any table and change some information. For something easily displayable in-game, try changing something in the cursors table (change the image data for each of the rows to the same thing)
+You can add or remove records with the Add Record / Remove Record buttons when you have a table open.
+When you have finished making your changes to a table, click Apply to save them.
+After you have made all the changes you wish you then need to export the data into a binary format that can be then read by the game. In order to do this, from the Export menu select Export Single Table(s)
+Select any tables you have changed (hold down CTRL to select multiple tables) and make sure Export Dependencies is selected then select Export Table(s)
+This will launch BOB (Our data processing tool). When the processing is complete, a confirmation message will be displayed – click OK.
+Unit Editor
+First, launch TWeak.Release.exe from the modding/binaries folder.
+From the Tools menu, select Unit Editor
+From the Unit Selection Window you can filter between all the units from Land, Naval or Campaign. Choose any unit and then select the Edit Unit button.
+Alternatively, you can create an entirely new unit by clicking New.
+In the main Editing window, you can select all the available parts for each unit with the “Parts by:” drop down menu.
+Double click to add a part to the category on the left. Continue in this fashion until you have a whole unit fully built. Then click the Save As button in order to save your unit as a .unit_variant file. This is saved in the modding\working_data\VariantModels\Units directory.
+BOB
+Now we need to combine all our data changes we have made with DaVE and the Unit Editor into a .pack file which can be read by the game. We use our processing tool BOB for this.
+Close TWeak and then launch BOB.Release.exe from the modding/binaries folder
+In the right-hand panel (Retail) and expand the data folder and check the box next to mod.pack and then click Start to create your mod.pack file from the data changes you have made.
+If the process has completed successfully, the Pack entry will turn green. Click Exit to close BOB.
+mod.pack
+After processing, BOB will have created a mod.pack file which is located in modding\retail\data
+This file contains all the changes you have made. It is recommended you rename this file to a description of what your mod is e.g. CursorMod.pack
+The next step is to copy this file from your modding directory which is;
+modding\retail\data
+
+Into your Steam install data directory which by default is;
+
+C:\Program Files (x86)\Steam\steamapps\common\total war shogun 2\data
+
+Mod Manager
+The Mod Manager is a separate tool that lets you select which mods you would like to be applied to SHOGUN 2 as well as select which mods you would like to upload to the Steam Workshop.
+The Mod Manager will be shown automatically if you subscribe to a mod on the Steam Workshop and then launch SHOGUN 2.
+The Mod Manager will be shown automatically if you have any mod.pack file in your data folder of SHOGUN 2.
+You can use the checkbox next to each entry of a pack file to select which mod to be loaded in-game.
+After subscribing to a mod on the Steam Workshop, the mod manager will download the file and it will be displayed in the list, available for selection.
+After double clicking you mod you can supply a Name and a Description and then upload directly to the Steam Workshop with the Add to Steam Workshop button.
+You can remove any mod from your install by double clicking and then selecting Remove.
+You can open any mod on the Steam Workshop by double clicking and then selecting Open on Steam Workshop
+After selecting which mods you would like to play, simple c

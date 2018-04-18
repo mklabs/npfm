@@ -1,7 +1,7 @@
 # npfm
 
-Modding tools, CLI and vinyl adapter to generate CA modding pack for Total War
-Warhammer II.
+Modding toolbox for Total War Warhammer II.
+
 
 [![Build Status](https://travis-ci.org/mklabs/npfm.svg?branch=master)](https://travis-ci.org/mklabs/npfm)
 
@@ -13,29 +13,19 @@ Warhammer II.
     # as a lib
     npm install npfm
 
-## Usage
+## Description
 
-```js
-const path = require('path');
-const packer = require('npfm/lib/packer');
-const output = 'foo.pack';
-const pattern = '**/*';
+This package aims to provide a companion CLI app to the [Assembly
+Kit](http://wiki.totalwar.com/w/Official_CA_modding_tips_and_tutorials) for
+Warhammer II.
 
-(async () => {
-  const pack = await packer.create({ output, pattern, cwd: path.resolve('working_data') });
-  debug('Pack created at %s', pack.output);
-})();
-```
+## Documentation
 
-Note: Only works with raw files such as script and assets (images, text file
-etc.). Other binary files expected by PFM (like DB tables) needs to be
-converted from XML to binary format first (or use bob / pfm's output).
+- [General User Guide](./docs)
 
 ### CLI
 
 ```
-npfm v1.0.2 - https://mklabs.github.io/npfm
-
 Usage: npfm [command] [options]
 
 Example:
