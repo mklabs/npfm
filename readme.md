@@ -75,6 +75,25 @@ Example:
 
 The `src` and `cwd` can be changed to generate the proper directory structure within the mod.
 
+## .npfmignore file
+
+Similar to `.gitignore` or `.npmignore` files, you can setup a list of pattern
+you'd like to exclude from the produced mod.pack.
+
+To do so, create a `.npfmignore` file in the current working directory:
+
+```
+BattleTerrain/**/*
+EditorBrushes/**/*
+RigidModels/**/*
+Terry/**/*
+Weather/**/*
+campaigns/**/*
+rules.bob
+```
+
+These globs patterns have to be relative to the provided `--cwd` option.
+
 ## Starter Kit
 
 > TODO create template to init a new project
