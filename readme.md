@@ -40,7 +40,7 @@ With npfm: Assembly Kit (Dave) => Export changes to binaries => npfm => npfm_gen
 npfm can effectively be use to feed PFM with the `working_data/` directory
 structure and generate a pack out of it.
 
-<div style="text-align">
+<div style="text-align: center">
 <a href="https://www.youtube.com/watch?v=Ri2dZ0XNpDo" rel="nofollow">
   <img src="https://camo.githubusercontent.com/a02929268426e881f15824c6f8979842e0b93c23/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f526932645a30584e70446f2f302e6a7067" alt="npfm pack" data-canonical-src="https://img.youtube.com/vi/Ri2dZ0XNpDo/0.jpg" style="max-width:100%;">
 </a>
