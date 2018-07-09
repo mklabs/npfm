@@ -1,6 +1,6 @@
 {
   "name": "@mklabs/npfm",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Modding tools and CLI to generate CA modding pack for Total War Warhammer II",
   "bin": "bin/npfm",
   "main": "./lib/index.js",
