@@ -6,11 +6,13 @@ Modding toolbox for Total War Warhammer II.
 
 ## Installation
 
+*warning* This package has been renamed to `@mklabs/npfm`, all previous version of npfm have been deprecated in favor of a scoped package.
+
     # CLI installed globally
-    npm install npfm -g
+    npm install @mklabs/npfm -g
 
     # as a lib
-    npm install npfm
+    npm install @mklabs/npfm
 
 ## Description
 
